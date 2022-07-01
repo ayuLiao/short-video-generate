@@ -220,10 +220,10 @@ def add_sound_to_video():
 
 if __name__ == '__main__':
     create_dirs([gen_image_dir_path, gen_video_dir_path, clean_ocr_dir_path, sound_dir_path])
-    # get_ocr_json(ocr_dir_path)
-    # browser = get_browser()
-    # gen_wechat_image(browser)
-    # gen_video_from_image()
-    # get_sound_from_video()
-    # add_sound_to_video()
+    get_ocr_json(ocr_dir_path)
+    browser = get_browser()
+    gen_wechat_image(browser)
+    gen_video_from_image()
+    get_sound_from_video()
+    add_sound_to_video()
     add_sound_to_video()
