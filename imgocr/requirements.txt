@@ -1,0 +1,14 @@
+simplejson
+flask-restful-swagger
+Flask==1.1.1
+Werkzeug==0.16.1
+flask-restplus
+requests
+log4mongo
+numpy
+opencv-python
+paddlehub
+paddlenlp
+paddlepaddle
+shapely
+pyclipper

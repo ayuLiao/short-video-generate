@@ -1,0 +1,101 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+server/__pycache__/
+*.py[cod]
+*$py.class
+.idea
+# C extensions
+*.so
+*-superconf.json
+
+
+# Distribution / packaging
+.Python
+env/
+venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.dockerignore
+Pipfile*
+
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+
+# Files
+
+*.zip
+*.7z
+*.sln
+
+# IDE configuration
+.vs
+.vscode
+.idea/
+
+# superconf folder
+superconf_temp
+
+# test folder
+tests/db_results
+tests/geo_results
+tests/results
+tests/src_files
+
+.DS_Store
+tests/test_resource/*
+explore
+*.model
+*.pickle
+
+*.exe
+*.mp4
+*.avi
+
+*.wav
+
+*.jpeg
+*.json
+
+imgocr/images/*.jpg
