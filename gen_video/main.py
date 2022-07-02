@@ -20,6 +20,7 @@ clean_ocr_dir_path = r'C:\Users\admin\workplace\short-video-generate\gen_video\c
 gen_image_dir_path = r'C:\Users\admin\workplace\short-video-generate\gen_video\wechat_images'
 # 生成视频的目录
 gen_video_dir_path = r'C:\Users\admin\workplace\short-video-generate\gen_video\wechat_videos'
+gen_video_dir_path2 = r'C:\Users\admin\workplace\short-video-generate\gen_video\wechat_videos2'
 # 提取音频的目录
 sound_dir_path = r'C:\Users\admin\workplace\short-video-generate\gen_video\video_sounds'
 
@@ -209,9 +210,14 @@ def add_sound_to_video():
     for video_name in os.listdir(gen_video_dir_path):
         video_path = os.path.join(gen_video_dir_path, video_name)
         video = VideoFileClip(video_path)
+        video_time = video.duration
         audio = AudioFileClip(sound_path)
+        audio_video_time = audio.duration
+        if audio_video_time > video_time:
+            # 切割出目标视频长度的音频
+            audio = audio.subclip(0, video_time)
         new_video = video.set_audio(audio)
-        save_path = os.path.join(gen_video_dir_path, f"{video_name.split('.')[0]}-sound.mp4")
+        save_path = os.path.join(gen_video_dir_path2, f"{video_name.split('.')[0]}-sound.mp4")
         new_video.write_videofile(save_path, threads=8)
         video.close()
         audio.close()
@@ -219,11 +225,11 @@ def add_sound_to_video():
         print(f'{save_path} 生成成功')
 
 if __name__ == '__main__':
-    create_dirs([gen_image_dir_path, gen_video_dir_path, clean_ocr_dir_path, sound_dir_path])
-    get_ocr_json(ocr_dir_path)
-    browser = get_browser()
-    gen_wechat_image(browser)
-    gen_video_from_image()
-    get_sound_from_video()
-    add_sound_to_video()
+    create_dirs([gen_image_dir_path, gen_video_dir_path, clean_ocr_dir_path, sound_dir_path, gen_video_dir_path2])
+    # get_ocr_json(ocr_dir_path)
+    # browser = get_browser()
+    # gen_wechat_image(browser)
+    # gen_video_from_image()
+    # get_sound_from_video()
+    # add_sound_to_video()
     add_sound_to_video()
